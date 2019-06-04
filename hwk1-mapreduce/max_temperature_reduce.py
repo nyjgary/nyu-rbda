@@ -2,7 +2,8 @@
 
 import sys
 
-(last_key, max_val) = (None, -sys.maxint)
+(last_key, max_val) = (None, -sys.maxsize)
+#(last_key, max_val) = (None, -sys.maxint)
 for line in sys.stdin:
   (key, val) = line.strip().split("\t")
   if last_key and last_key != key:
