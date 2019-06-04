@@ -1,0 +1,89 @@
+[yjn214@login-2-1 hwk1-mapreduce]$ hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
+> -D mapreduce.job.reduces=1 \
+> -files hdfs://dumbo/user/yjn214/rbda-hwk1/max_temperature_map.py,hdfs://dumbo/user/yjn214/rbda-hwk1/max_temperature_reduce.py \
+> -mapper max_temperature_map.py \
+> -reducer max_temperature_reduce.py \
+> -input /user/yjn214/rbda-hwk1/sample.txt \
+> -output /user/yjn214/rbda-hwk1/output
+packageJobJar: [] [/opt/cloudera/parcels/CDH-5.15.2-1.cdh5.15.2.p0.3/jars/hadoop-streaming-2.6.0-cdh5.15.2.jar] /tmp/streamjob7412038926322391780.jar tmpDir=null
+19/06/04 01:01:04 INFO mapred.FileInputFormat: Total input paths to process : 1
+19/06/04 01:01:04 INFO mapreduce.JobSubmitter: number of splits:2
+19/06/04 01:01:04 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1551899815467_52827
+19/06/04 01:01:04 INFO impl.YarnClientImpl: Submitted application application_1551899815467_52827
+19/06/04 01:01:04 INFO mapreduce.Job: The url to track the job: http://babar.es.its.nyu.edu:8088/proxy/application_1551899815467_52827/
+19/06/04 01:01:04 INFO mapreduce.Job: Running job: job_1551899815467_52827
+19/06/04 01:01:09 INFO mapreduce.Job: Job job_1551899815467_52827 running in uber mode : false
+19/06/04 01:01:09 INFO mapreduce.Job:  map 0% reduce 0%
+19/06/04 01:01:14 INFO mapreduce.Job:  map 100% reduce 0%
+19/06/04 01:01:19 INFO mapreduce.Job:  map 100% reduce 100%
+19/06/04 01:01:19 INFO mapreduce.Job: Job job_1551899815467_52827 completed successfully
+19/06/04 01:01:19 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=69
+		FILE: Number of bytes written=474910
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=988
+		HDFS: Number of bytes written=17
+		HDFS: Number of read operations=9
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters
+		Launched map tasks=2
+		Launched reduce tasks=1
+		Data-local map tasks=2
+		Total time spent by all maps in occupied slots (ms)=19468
+		Total time spent by all reduces in occupied slots (ms)=14040
+		Total time spent by all map tasks (ms)=4867
+		Total time spent by all reduce tasks (ms)=2340
+		Total vcore-milliseconds taken by all map tasks=4867
+		Total vcore-milliseconds taken by all reduce tasks=2340
+		Total megabyte-milliseconds taken by all map tasks=19935232
+		Total megabyte-milliseconds taken by all reduce tasks=14376960
+	Map-Reduce Framework
+		Map input records=5
+		Map output records=5
+		Map output bytes=55
+		Map output materialized bytes=92
+		Input split bytes=194
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2
+		Reduce shuffle bytes=92
+		Reduce input records=5
+		Reduce output records=2
+		Spilled Records=10
+		Shuffled Maps =2
+		Failed Shuffles=0
+		Merged Map outputs=2
+		GC time elapsed (ms)=656
+		CPU time spent (ms)=13510
+		Physical memory (bytes) snapshot=2571198464
+		Virtual memory (bytes) snapshot=11210301440
+		Total committed heap usage (bytes)=4400873472
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=794
+	File Output Format Counters
+		Bytes Written=17
+19/06/04 01:01:19 INFO streaming.StreamJob: Output directory: /user/yjn214/rbda-hwk1/output
+
+
+[yjn214@login-2-1 hwk1-mapreduce]$ hdfs dfs -ls /user/yjn214/rdba-hwk1/output
+ls: `/user/yjn214/rdba-hwk1/output': No such file or directory
+[yjn214@login-2-1 hwk1-mapreduce]$ hdfs dfs -ls /user/yjn214/rbda-hwk1/output
+Found 2 items
+-rw-r-----+  3 yjn214 users          0 2019-06-04 01:01 /user/yjn214/rbda-hwk1/output/_SUCCESS
+-rw-r-----+  3 yjn214 users         17 2019-06-04 01:01 /user/yjn214/rbda-hwk1/output/part-00000
+
+
+[yjn214@login-2-1 hwk1-mapreduce]$ hdfs dfs -cat /user/yjn214/rbda-hwk1/output/part-00000
+1949	111
+1950	22
