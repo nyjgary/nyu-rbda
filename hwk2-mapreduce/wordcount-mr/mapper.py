@@ -19,6 +19,8 @@ for line in sys.stdin:
 	# iterate through each search term and check whether term is in words 
 	for term in term_mapping.keys():
 		if term in words: 
-			print("{}\t{}".format(term, 1))
+#			print("{}\t{}".format(term, 1))
+			print("%s\t%s" % (term, 1))
 		else: 
-			print("{}\t{}".format(term, 0))
+#			print("{}\t{}".format(term, 0))
+			print("%s\t%s" % (term, 0))

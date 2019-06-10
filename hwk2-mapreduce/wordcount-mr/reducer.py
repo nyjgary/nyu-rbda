@@ -25,10 +25,12 @@ for line in sys.stdin:
 	else: 
 		# assuming current word is not just initial None, print results of previous word 
 		if current_word is not None: 
-			print("{}\t{}".format(term_mapping[current_word], word_count)) # convert lowercase term back to original 
+#			print("{}\t{}".format(term_mapping[current_word], word_count)) # convert lowercase term back to original 
+			print("%s\t%s" % (term_mapping[current_word], word_count))
 		# swap new word as current word and update its count 
 		current_word = norm_term
 		word_count = term_count
 
 # handle the last key 
-print("{}\t{}".format(term_mapping[current_word], word_count)) # convert lowercase term back to original 
+# print("{}\t{}".format(term_mapping[current_word], word_count)) # convert lowercase term back to original 
+print("%s\t%s" % (term_mapping[current_word], word_count))
