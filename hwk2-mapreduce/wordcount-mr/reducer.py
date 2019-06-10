@@ -8,7 +8,8 @@ import sys
 SEARCH_TERMS = ['hackathon', 'Dec', 'Chicago', 'Java']
 
 # create dict to hold mapping of lowercase term to original term 
-term_mapping = {ori_term.lower(): ori_term for ori_term in SEARCH_TERMS}
+# term_mapping = {ori_term.lower(): ori_term for ori_term in SEARCH_TERMS} # didn't work on dumbo 
+term_mapping = dict((ori_term.lower(), ori_term) for ori_term in SEARCH_TERMS)
 
 # initialize variables 
 current_word, word_count = None, 0
