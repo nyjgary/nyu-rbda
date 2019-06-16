@@ -13,10 +13,10 @@ function runHadoopJob {
 	-mapper "python mapper.py" \
 	-reducer "python reducer.py" \
 	-input hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/input_data.txt \
-	-output output_path
+	-output $output_path
 
 	# set output file as new input file (note: at the end this will represent the OUTPUT)
-	hdfs dfs -mv output_file hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/input_data.txt
+	hdfs dfs -mv $output_file hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/input_data.txt
 
 }
 
@@ -30,7 +30,7 @@ function main {
 
 	# save final result 
 	final_path="hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/output_$num_iterations"
-	hdfs dfs -cp final_path hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/output_final 
+	hdfs dfs -mv final_path hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/final_output
 
 }
 
