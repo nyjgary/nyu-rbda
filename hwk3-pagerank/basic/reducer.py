@@ -44,4 +44,4 @@ for line in sys.stdin:
 			current_key, current_pr = key, pr 
 
 # handle the last key 
-print("%s %s" % (original, current_pr))
+print("%s %s %s" % (current_key, original, str(current_pr)))
