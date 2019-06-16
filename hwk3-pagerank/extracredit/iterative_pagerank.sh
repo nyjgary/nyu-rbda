@@ -16,7 +16,7 @@ function runHadoopJob {
 	-output $output_path
 
 	# set output file as new input file (note: at the end this will represent the OUTPUT)
-	hdfs dfs -mv $output_file hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/input_data.txt
+	hdfs dfs -mv -f $output_file hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/input_data.txt
 
 }
 
