@@ -1,0 +1,7 @@
+hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
+-D mapreduce.job.reduces=1 \
+-files hdfs://dumbo/user/yjn214/hwk3-pagerank/mapper.py,hdfs://dumbo/user/yjn214/hwk3-pagerank/reducer.py \
+-mapper "python mapper.py" \
+-reducer "python reducer.py" \
+-input hdfs://dumbo/user/yjn214/hwk3-pagerank/input_data.txt \
+-output hdfs://dumbo/user/yjn214/hwk3-pagerank/output 
