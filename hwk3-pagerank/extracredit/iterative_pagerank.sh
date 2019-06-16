@@ -31,7 +31,7 @@ function main {
 
 	# save final result 
 	final_path="hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/output_$num_iterations"
-	hdfs dfs -mv final_path hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/final_output
+	hdfs dfs -mv $final_path hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/final_output
 
 }
 
