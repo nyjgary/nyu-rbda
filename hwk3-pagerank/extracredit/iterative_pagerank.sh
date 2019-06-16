@@ -1,5 +1,7 @@
 #!/bin/bash  
 
+# Reference: Code inspiration from https://github.com/bilal-elchami/hadoop_streaming_job_chaining/blob/master/launch.sh
+
 function runHadoopJob {
 
 	echo "Running iteration $1..."
@@ -20,7 +22,6 @@ function runHadoopJob {
 	hdfs dfs -cp $output_file hdfs://dumbo/user/yjn214/hwk3-pagerank-ec/input_data.txt
 
 }
-
 
 function main {
 
