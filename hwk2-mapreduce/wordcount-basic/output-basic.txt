@@ -1,0 +1,7 @@
+(py37base)  garyng@10-16-240-42  ~/Documents/version-control/nyu-rbda/hwk2-mapreduce/wordcount-basic   master  ls
+input_data.txt     wordcount-basic.py
+(py37base)  garyng@10-16-240-42  ~/Documents/version-control/nyu-rbda/hwk2-mapreduce/wordcount-basic   master  python wordcount-basic.py
+hackathon: 2
+Dec: 2
+Chicago: 1
+Java: 0
